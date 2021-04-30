@@ -9,12 +9,12 @@ static const char *fonts[] = {
 };
 static const char dmenufont[]       = "SourceCodePro-Regular:size=14";
 static const char normbordercolor[] = "#000";
-static const char normbgcolor[]     = "#330033";
+static const char normbgcolor[]     = "#000";
 static const char normfgcolor[]     = "#fff";
-static const char selbordercolor[]  = "#330033";
-static const char selbgcolor[]      = "#990099";
+static const char selbordercolor[]  = "#424242";
+static const char selbgcolor[]      = "#424242";
 static const char selfgcolor[]      = "#fff";
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -57,9 +57,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "terminator", NULL };
 static const char *browsercmd[] = {"firefox", NULL};
-static const char *texteditorcmd[] = {"atom" , NULL};
+static const char *texteditorcmd[] = {"code-oss" , NULL};
+static const char *discordcmd[] = {"discord" , NULL};
+static const char *spotifycmd[] = {"spotify" , NULL};
 static Key keys[] = {
 
 	/* modifier                     key        function        argument */
@@ -68,6 +70,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{MODKEY|ShiftMask, XK_f, spawn, {.v=browsercmd}},
 	{MODKEY|ShiftMask, XK_c, spawn, {.v=texteditorcmd}},
+	{MODKEY|ShiftMask, XK_s, spawn, {.v=spotifycmd}},
+	{MODKEY|ShiftMask, XK_d, spawn, {.v=discordcmd}},
 	{ MODKEY,                       XK_Left,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Right,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,                       XK_i,      incnmaster,     {.i = +1 } },
