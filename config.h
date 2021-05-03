@@ -62,6 +62,7 @@ static const char *browsercmd[] = {"firefox", NULL};
 static const char *texteditorcmd[] = {"code-oss" , NULL};
 static const char *discordcmd[] = {"discord" , NULL};
 static const char *spotifycmd[] = {"spotify" , NULL};
+static const char *virt_manager_cmd[] = {"virt-manager", NULL};
 static Key keys[] = {
 
 	/* modifier                     key        function        argument */
@@ -72,6 +73,7 @@ static Key keys[] = {
 	{MODKEY|ShiftMask, XK_c, spawn, {.v=texteditorcmd}},
 	{MODKEY|ShiftMask, XK_s, spawn, {.v=spotifycmd}},
 	{MODKEY|ShiftMask, XK_d, spawn, {.v=discordcmd}},
+	{MODKEY|ShiftMask, XK_v, spawn, {.v=virt_manager_cmd}},
 	{ MODKEY,                       XK_Left,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Right,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,                       XK_i,      incnmaster,     {.i = +1 } },
